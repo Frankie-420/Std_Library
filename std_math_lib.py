@@ -1,23 +1,36 @@
-def area_of_triangle(a, b, c):
+def calculate_area_of_triangle(side_a, side_b, side_c):
+    """
+    Calculate the area of a triangle using Heron's formula.
+
+    Parameters:
+    - side_a (float): Length of the first side.
+    - side_b (float): Length of the second side.
+    - side_c (float): Length of the third side.
+
+    Returns:
+    float: Area of the triangle.
+    """
     # Calculate the semi-perimeter
-    s = (a + b + c) / 2
+    semi_perimeter = (side_a + side_b + side_c) / 2
     
     # Calculate the area using Heron's formula
-    area = (s * (s - a) * (s - b) * (s - c))**0.5
+    area = (semi_perimeter * (semi_perimeter - side_a) * (semi_perimeter - side_b) * (semi_perimeter - side_c))**0.5
     
     return area
 
-def area_of_rectangle(length: float,width: float) -> float:
-    # Calculate the semi-perimeter
-    return length * width
+def calculate_area_of_rectangle(length: float, height: float) -> float:
+    """
+    Calculate the area of a rectangular prism.
 
-def cube_m2(area:float,height:float) -> float:
-    cubic_area = area*height
-    return cubic_area
+    Parameters:
+    - length (float): Length of the rectangle.
+    - height (float): Height of the prism.
 
-def get_cubic_weight(area,weight):
-    cubic_weight = area*weight
-    return cubic_weight
+    Returns:
+    float: Area of the rectangular prism.
+    """
+    rectangle_area = length * height
+    return rectangle_area
 
 def calculate_volume_of_cuboid(length_a, length_b, length_c):
     """
@@ -33,3 +46,17 @@ def calculate_volume_of_cuboid(length_a, length_b, length_c):
     """
     volume = length_a * length_b * length_c
     return volume
+
+def calculate_cubic_weight(length: float, weight: float) -> float:
+    """
+    Calculate the cubic weight of an object.
+
+    Parameters:
+    - length (float): Length of the object.
+    - weight (float): Weight of the object.
+
+    Returns:
+    float: Cubic weight of the object.
+    """
+    cubic_weight = length * weight
+    return cubic_weight
