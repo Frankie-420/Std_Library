@@ -7,36 +7,29 @@ def area_of_triangle(a, b, c):
     
     return area
 
-def area_of_rectangle(length,width):
+def area_of_rectangle(length: float,width: float) -> float:
     # Calculate the semi-perimeter
-    area = length*width
-    return area
+    return length * width
 
-def cube_m2(area,height):
+def cube_m2(area:float,height:float) -> float:
     cubic_area = area*height
     return cubic_area
 
-def cubic_weight(area,weight):
+def get_cubic_weight(area,weight):
     cubic_weight = area*weight
     return cubic_weight
 
-WEIGHT = 750 # KG/m
-THICKNESS = 0.0016 # m
+def calculate_volume_of_cuboid(length_a, length_b, length_c):
+    """
+    Calculate the volume of a three-dimensional rectangle (cuboid).
 
-Rectangles = ((0.5,0.5),(0.5,0.5)) # m
-Triangles = ((0.5,0.5,0.5),(0.5,0.5,0.5)) # m
+    Parameters:
+    - length_a (float): Length along the first dimension.
+    - length_b (float): Length along the second dimension.
+    - length_c (float): Length along the third dimension.
 
-total = 0
-for a,b,c in Triangles:
-    area = area_of_triangle(a,b,c)
-    cubic_area = cube_m2(area,THICKNESS)
-    cubed_weight = cubic_weight(cubic_area,WEIGHT)
-    total = total + cubed_weight
-
-for length,Width in Rectangles:
-    area = area_of_rectangle(length,Width)
-    cubic_area = cube_m2(area,THICKNESS)
-    cubed_weight = cubic_weight(cubic_area,WEIGHT)
-    total = total + cubed_weight
-
-print(total)
+    Returns:
+    float: Volume of the cuboid.
+    """
+    volume = length_a * length_b * length_c
+    return volume
